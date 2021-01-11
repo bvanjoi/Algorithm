@@ -12,3 +12,5 @@ pub mod binary_search;
 pub mod linear_search;
 
 pub mod horner_method;
+
+pub mod max_subarray;
