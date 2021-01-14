@@ -16,7 +16,9 @@
 - 序列 `A`: [-2, 1, -3, 4, -1, 2, 1, -5, 4].
 - 当前和 `current_sum`: 0.
 - 结果 `max_sum`: 0.
+
 迭代过程如下：
+
 | `i` | `A[i]` | `A[i] + current_sum` | `current_sum`（本轮结束后） | `max_sum` |
 | -   |    -   |    -                 |    -                      |    -      |
 | 0   |   -2   |    -2                |    0                      |    0      |
@@ -54,8 +56,8 @@ pub fn max_subarray(arr: Vec<i32>) -> i32 {
 
 最长子序列问题存在多种解法：
 
-- 暴力法
-- [WIP]分治法
+- [暴力法](./brute-force.md)
+- [分治法](./divide-and-conquer.md)
 
 ### 练习
 

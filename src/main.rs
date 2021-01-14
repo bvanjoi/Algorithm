@@ -1,5 +1,8 @@
-use algorithm::binary_search::binary_search;
-
 fn main() {
-    println!("{:?}", binary_search(vec![0, 1, 2, 3, 4, 5, 6], 0));
+    assert_eq!(
+        algorithm::max_subarray::max_subarray_divide_and_conquer(vec![
+            -2, -1, -3, -4, -1, -2, -1, -5, -4
+        ]),
+        -1
+    );
 }
