@@ -23,9 +23,9 @@
 - [卡特兰数](./src/catalan_number/README.md)
 - [霍纳算法](./src/horner_method/README.md)
 
-## 动态规划
+## 最大子序和
 
-- [最大子序和](./src/max_subarray/README.md)
+- [最大子序和的三种解法](./src/max_subarray/README.md)
 
 ## reference
 
