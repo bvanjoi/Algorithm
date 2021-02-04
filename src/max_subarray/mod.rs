@@ -53,7 +53,7 @@ pub fn max_subarray_brute_force(arr: Vec<i32>) -> i32 {
     }
     let mut max_sum = arr[0];
     for i in 0..arr.len() {
-        let mut now_sum =0;
+        let mut now_sum = 0;
         for j in i..arr.len() {
             now_sum += arr[j];
             max_sum = i32::max(max_sum, now_sum);

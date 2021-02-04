@@ -27,6 +27,10 @@
 
 - [最大子序和的三种解法](./src/max_subarray/README.md)
 
+## 线性代数
+
+- [矩阵乘法](./src/matrix_multiplication/README.md)
+
 ## reference
 
 - [Introduction to Algorithms, 3rd Edition](https://web.ist.utl.pt/~fabio.ferreira/material/asa/clrs.pdf)

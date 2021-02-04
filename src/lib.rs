@@ -13,4 +13,5 @@ pub mod linear_search;
 
 pub mod horner_method;
 
+pub mod matrix_multiplication;
 pub mod max_subarray;
