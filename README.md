@@ -27,6 +27,10 @@
 
 - [最大子序和的三种解法](./src/max_subarray/README.md)
 
+## 栈应用
+
+- [中缀表达式转后缀](./src/infix_to_postfix/README.md)
+
 ## 线性代数
 
 - [矩阵乘法](./src/matrix_multiplication/README.md)
