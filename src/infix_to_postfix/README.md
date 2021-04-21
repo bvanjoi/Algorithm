@@ -49,83 +49,137 @@
 
 ### 实现
 
+首先，假设输入的字符串为 `s`, 则定义函数 `in2post(s: String) -> String {}` 来实现前缀表达式到后缀表达式的转换。
+
+在该函数体内，则需要两个字符串数组来记录操作符和结果：
+
+```rust
+// 记录操作符的栈
+let mut record_stack: Vec<String> = vec![];
+// 记录结果的字符串数组
+let mut result: Vec<String> = vec![];
+```
+
+同时，还需要一个字符串变量来记录当前遍历到的数字：
+
+```rust
+// 记录当前数字
+let mut temp_number = String::new();
+```
+
+之后，来遍历输入的字符串 `s`: 对于每一个数字，将其存入到 `temp_number` 中；对于每一个操作符，将其放入到函数 `deal_operation` 中进行处理；对于空白符 ``, 直接略过；对于其他不再讨论范围内的字符，直接报错处理。
+
+```rust
+for it in s.chars() {
+    match it {
+        '(' | ')' | '*' | '/' | '+' | '-' => {
+            deal_operation(it, &mut record_stack, &mut result, &mut temp_number);
+        }
+        '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' => temp_number.push(it),
+        ' ' => (),
+        _ => panic!("Error! Please input a valid string"),
+    }
+}
+```
+
+函数 `deal_operation` 的功能可以参考 `算法` 部分，其内容如下：
+
+```rust
+/// 当 temp_number 不为空时， 将 temp_number 存入到 result 中
+/// * `result` - The result of string
+/// * `temp_number` - The number of you input
+fn gen_vars(result: &mut Vec<String>, temp_number: &mut String) {
+    if temp_number.len() == 0 {
+        return;
+    }
+    result.push(temp_number.clone());
+    temp_number.clear();
+}
+
+/// 处理运算符
+/// * `it` - operations
+fn deal_operation(
+    it: char,
+    record_stack: &mut Vec<String>,
+    result: &mut Vec<String>,
+    temp_number: &mut String,
+) {
+    /// 处理右括号
+    fn deal_right_parenthesis(record_stack: &mut Vec<String>, result: &mut Vec<String>) {
+        while record_stack.len() > 0 {
+            let s = record_stack.pop();
+            match s {
+                Some(s) => {
+                    if s == "(" {
+                        return;
+                    } else {
+                        result.push(s);
+                    }
+                }
+                None => panic!("Error! Please input a valid string"),
+            }
+        }
+    }
+    // 处理加减号
+    fn deal_add_and_sub(record_stack: &mut Vec<String>, result: &mut Vec<String>) {
+        while record_stack.len() > 0 {
+            let s = record_stack.last();
+            match s {
+                Some(s) => {
+                    if s == "+" || s == "-" || s == "*" || s == "/" {
+                        result.push(s.clone());
+                        record_stack.pop();
+                    } else {
+                        break;
+                    }
+                }
+                None => panic!("Error! Please input a valid string"),
+            }
+        }
+    }
+    match it {
+        '(' => record_stack.push(it.to_string()),
+        ')' => {
+            gen_vars(result, temp_number);
+            deal_right_parenthesis(record_stack, result);
+        }
+        '*' | '/' => {
+            gen_vars(result, temp_number);
+            record_stack.push(it.to_string());
+        }
+        '+' | '-' => {
+            gen_vars(result, temp_number);
+            deal_add_and_sub(record_stack, result);
+            record_stack.push(it.to_string());
+        }
+        _ => (),
+    }
+}
+```
+
+遍历结束后，需要对尾部进行一些特殊处理，防止有未遍历完的数字和符号
+
+```rust
+if temp_number.len() > 0 {
+    gen_vars(&mut result, &mut temp_number);
+}
+while let Some(s) = record_stack.pop() {
+    result.push(s)
+}
+```
+
+最后，返回结果。
+
+----
+
+综上，我们的代码可以写为：
+
 ```rust
 pub fn in2post(s: String) -> String {
-    // 记录操作符的栈
     let mut record_stack: Vec<String> = vec![];
-    // 记录结果的字符串数组
     let mut result: Vec<String> = vec![];
-    // 记录当前数字
     let mut temp_number = String::new();
-    /// 当 temp_number 不为空时， 将 temp_number 存入到 result 中
-    /// * `result` - The result of string
-    /// * `temp_number` - The number of you input
-    fn gen_vars(result: &mut Vec<String>, temp_number: &mut String) {
-        if temp_number.len() == 0 {
-            return;
-        }
-        result.push(temp_number.clone());
-        temp_number.clear();
-    }
-    /// 处理运算符
-    /// * `it` - operations
-    fn deal_operation(
-        it: char,
-        record_stack: &mut Vec<String>,
-        result: &mut Vec<String>,
-        temp_number: &mut String,
-    ) {
-        /// 处理右括号
-        fn deal_right_parenthesis(record_stack: &mut Vec<String>, result: &mut Vec<String>) {
-            while record_stack.len() > 0 {
-                let s = record_stack.pop();
-                match s {
-                    Some(s) => {
-                        if s == "(" {
-                            return;
-                        } else {
-                            result.push(s);
-                        }
-                    }
-                    None => panic!("Error! Please input a valid string"),
-                }
-            }
-        }
-        // 处理加减号
-        fn deal_add_and_sub(record_stack: &mut Vec<String>, result: &mut Vec<String>) {
-            while record_stack.len() > 0 {
-                let s = record_stack.last();
-                match s {
-                    Some(s) => {
-                        if s == "+" || s == "-" || s == "*" || s == "/" {
-                            result.push(s.clone());
-                            record_stack.pop();
-                        } else {
-                            break;
-                        }
-                    }
-                    None => panic!("Error! Please input a valid string"),
-                }
-            }
-        }
-        match it {
-            '(' => record_stack.push(it.to_string()),
-            ')' => {
-                gen_vars(result, temp_number);
-                deal_right_parenthesis(record_stack, result);
-            }
-            '*' | '/' => {
-                gen_vars(result, temp_number);
-                record_stack.push(it.to_string());
-            }
-            '+' | '-' => {
-                gen_vars(result, temp_number);
-                deal_add_and_sub(record_stack, result);
-                record_stack.push(it.to_string());
-            }
-            _ => (),
-        }
-    }
+    
     for it in s.chars() {
         match it {
             '(' | ')' | '*' | '/' | '+' | '-' => {
@@ -142,46 +196,6 @@ pub fn in2post(s: String) -> String {
     while let Some(s) = record_stack.pop() {
         result.push(s)
     }
-    /// 检查后缀表达式的有效性并输出结果
-    fn compute(result: &Vec<String>) -> i32 {
-        fn is_valid(r: &Vec<i32>) -> bool {
-            if r.len() < 2 {
-                false
-            } else {
-                true
-            }
-        }
-        let mut r: Vec<i32> = vec![];
-        for it in result {
-            if it == "+" || it == "-" || it == "*" || it == "/" {
-                if !is_valid(&r) {
-                    panic!("Error! Please input a valid string");
-                }
-                let second_number = r.pop().unwrap();
-                let first_number = r.pop().unwrap();
-                if it == "+" {
-                    r.push(first_number + second_number);
-                } else if it == "-" {
-                    r.push(first_number - second_number);
-                } else if it == "*" {
-                    r.push(first_number * second_number);
-                } else if it == "/" {
-                    r.push(first_number / second_number);
-                }
-            } else {
-                if it.parse::<i32>().is_err() {
-                    panic!("Error! Please input a valid string");
-                }
-                r.push(it.parse().unwrap());
-            }
-        }
-        if r.len() == 1 {
-            return r.pop().unwrap();
-        } else {
-            panic!("Error! Please input a valid string");
-        }
-    }
-    compute(&result.clone());
     result.join(" ")
 }
 ```
