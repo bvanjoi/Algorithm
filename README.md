@@ -22,6 +22,7 @@
 - [逆序数](./src/inversion/README.md)
 - [卡特兰数](./src/catalan_number/README.md)
 - [霍纳算法](./src/horner_method/README.md)
+- [欧几里得算法](./src/euclidean_algorithm/README.md)
 
 ## 最大子序和
 
