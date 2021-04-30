@@ -30,6 +30,7 @@
 
 ## 栈应用
 
+- [不可能的出栈顺序](./src/unreachable_stack_pop_order/README.md)
 - [中缀表达式转后缀](./src/infix_to_postfix/README.md)
 
 ## 线性代数
