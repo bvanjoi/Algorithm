@@ -1,9 +1,5 @@
 # 数论问题 — 逆序数
 
-## 数论问题概览
-
-数论是研究整数性质的数学分支。
-
 ## 逆序数简介
 
 假设从小到大为标准次序。
@@ -95,6 +91,8 @@ pub fn inversion_number_merge_sort(arr: Vec<i32>) -> i32 {
 - 空间复杂度: $O(n)$.
 
 ### 练习
+
+- [数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
 
 ## 参考
 

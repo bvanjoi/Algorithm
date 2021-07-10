@@ -1,10 +1,6 @@
-# 位运算 — 二进制加法
+# 字符串与数字 — n-进制加法
 
-## 位运算概览
-
-处理二进制的各种运算。
-
-## 二进制加法简介
+## n-进制加法简介
 
 - 输入: 两个二进制序列 $A$ 和 $B$.
 - 输出: 返回一个序列 $C$, 其每一位上的值为 $A$ 与 $B$ 对应位上值的和。
@@ -15,7 +11,7 @@
 
 ### 示例
 
-初始时：
+以二进制加法为例，初始时：
 
 - 序列 `A`: [1, 0, 1], `i` 为 2.
 - 序列 `B`: [1, 1], `j` 为 1.
@@ -30,7 +26,7 @@
 ### 实现
 
 ```Rust
-pub fn binary_add(a: Vec<u8>, b: Vec<u8>) -> Vec<u8> {
+pub fn n_add(a: Vec<usize>, b: Vec<usize>, n: usize) -> Vec<usize> {
     if a.len() == 0 {
         return a;
     } else if b.len() == 0 {
@@ -39,16 +35,16 @@ pub fn binary_add(a: Vec<u8>, b: Vec<u8>) -> Vec<u8> {
 
     let mut i: usize = a.len() - 1;
     let mut j: usize = b.len() - 1;
-    let mut carry: u8 = 0;
-    let mut res: Vec<u8> = Vec::new();
+    let mut carry: usize = 0;
+    let mut res: Vec<usize> = Vec::new();
 
     loop {
-        if a[i] > 1 || b[j] > 1 {
+        if a[i] > n - 1 || b[j] > n - 1 {
             panic!("Error! The input had value more than 1.");
         }
         let mut t = a[i] + b[j] + carry;
-        if t > 1 {
-            t = t - 2;
+        if t > n - 1 {
+            t = t - n;
             carry = 1;
         } else {
             carry = 0;
@@ -57,15 +53,15 @@ pub fn binary_add(a: Vec<u8>, b: Vec<u8>) -> Vec<u8> {
         if i == 0 || j == 0 {
             break;
         }
-        i = i - 1;
-        j = j - 1;
+        i = i - (n - 1);
+        j = j - (n - 1);
     }
 
     while i != 0 {
-        i = i - 1;
+        i = i - (n - 1);
         let mut t = a[i] + carry;
-        if t > 1 {
-            t = t - 2;
+        if t > n - 1 {
+            t = t - n;
             carry = 1;
         } else {
             carry = 0;
@@ -77,10 +73,10 @@ pub fn binary_add(a: Vec<u8>, b: Vec<u8>) -> Vec<u8> {
     }
 
     while j != 0 {
-        j = j - 1;
+        j = j - (n - 1);
         let mut t = b[j] + carry;
-        if t > 1 {
-            t = t - 2;
+        if t > n - 1 {
+            t = t - n;
             carry = 1;
         } else {
             carry = 0;
@@ -102,8 +98,6 @@ pub fn binary_add(a: Vec<u8>, b: Vec<u8>) -> Vec<u8> {
 
 - 运行时间: $O(n)$.
 - 空间复杂度: $O(n)$. 如果可以修改原数组，则空间复杂度可简化为 $O(1)$.
-
-### 特性
 
 ### 练习
 

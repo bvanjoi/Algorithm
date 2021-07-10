@@ -207,6 +207,8 @@ pub fn in2post(s: String) -> String {
 
 ### 练习
 
+- [基本计算器](https://leetcode-cn.com/problems/basic-calculator-ii/)
+
 ## 参考
 
 - [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)

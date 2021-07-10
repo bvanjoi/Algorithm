@@ -20,3 +20,9 @@ pub fn horner_method(a: Vec<i32>, x: i32) -> i128 {
     }
     return res;
 }
+
+#[test]
+fn test_inversion() {
+    assert_eq!(horner_method(vec![1, 2, 3, 4], 2), 49);
+    assert_eq!(horner_method(vec![-1, 2, -6, 2], 3), 5);
+}

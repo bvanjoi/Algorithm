@@ -1,0 +1,71 @@
+# 搜索 - 全排列
+
+## 全排列
+
+给定某个数组 A, 将其元素所有可能的排列枚举出来。
+
+### 算法
+
+寻找全排列是一个搜索的过程，例如数组 A 为 [1,2,...,n], 则其某个排列 $P = [p_1, p_2, ..., p_n]$, 其中， $p_i$ 满足 $1 <= p_i <= n$.
+
+1. 新建标记数组 r, 其长度等于 A.
+2. 迭代数组 A, 将其每一个元素依次放到 r 的所有位置上，并在此基础上进行递归。
+
+### 示例
+
+初始时：
+
+- 序列 `A`: [1,2],
+- 序列 `r`: [-1,-1]
+
+1. 将 `1` 放到 `r[0]` 上，再将 `2` 放到 `r[1]` 上；
+2. 将 `1` 放到 `r[1]` 上，再将 `2` 放到 `r[0]` 上。
+
+### 实现
+
+```Rust
+/// get the permutation of arr
+///
+/// - arr, origin array.
+/// - visited, visited[i] means weather arr[i] had used.
+/// - r, the record vector.
+/// - index, used for recursion.
+/// - res, store result.
+pub fn permutation<T: Clone>(
+    arr: &Vec<T>,
+    visited: &mut Vec<bool>,
+    r: &mut Vec<T>,
+    index: usize,
+    res: &mut Vec<Vec<T>>,
+) {
+    if r.len() != arr.len() || visited.len() != arr.len() {
+        panic!("the record or flag array had wrong.");
+    }
+    if index == arr.len() {
+        res.push(r.to_vec());
+        return;
+    }
+    for i in 0..arr.len() {
+        if visited[i] {
+            continue;
+        }
+        visited[i] = true;
+        r[index] = arr[i].clone();
+        permutation(arr, visited, r, index + 1, res);
+        visited[i] = false;
+    }
+}
+```
+
+### 性能
+
+- 运行时间: $O(2^n)$.
+- 空间复杂度: $O(n)$.
+
+### 练习
+
+- [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/)
+
+## 参考
+
+- [permutation](https://en.wikipedia.org/wiki/Permutation)

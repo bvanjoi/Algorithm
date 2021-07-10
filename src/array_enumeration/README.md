@@ -1,0 +1,37 @@
+# 搜索 - 数组的枚举
+
+## 数组的枚举
+
+如何从一个长度为 n 的数组 A 中，选择出 m 个元素，其中 m <= n.
+
+### 算法
+
+dfs 枚举数组，用 c 表示数组 A 中已经访问过的元素，当 c == m 成立时，表示满足条件。
+
+### 示例
+
+### 实现
+
+```Rust
+pub fn array_enumeration(r: &mut Vec<i32>, index: usize, m: i32, c: i32, res: &mut Vec<Vec<i32>>) {
+    if index == r.len() {
+        if c == m {
+            res.push(r.to_vec());
+        }
+        return;
+    }
+    r[index] = 1;
+    array_enumeration(r, index + 1, m, c + 1, res);
+    r[index] = 0;
+    array_enumeration(r, index + 1, m, c, res);
+}
+```
+
+### 性能
+
+- 运行时间: $O(2^n)$.
+- 空间复杂度: $O(n)$.
+
+### 练习
+
+## 参考

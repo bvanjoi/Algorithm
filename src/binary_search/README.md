@@ -1,10 +1,5 @@
 # 查找问题 — 二分查找
 
-## 查找问题概览
-
-- 输入: 一个长度为 $n$ 的序列 $A$, 且 $A = <a_1, a_2, ..., a_n>$ 和一个元素值 $v$.
-- 输出: 当序列 $A$ 中存在元素 $v$ 时，输出一个下标 $i$ 满足 $0 \le i \le A.len()$, 且 $v == A[i]$ 成立；否则输出 -1.
-
 ## 二分查找简介
 
 ### 算法
@@ -55,6 +50,15 @@ pub fn binary_search(arr: Vec<i32>, v: i32) -> i32 {
   - 最佳情况: $O(1)$. 第一个中间元素即为所寻。
   - 最坏情况: $O(logn)$. 未找到所寻元素或最后一个中间元素为所寻元素。
 - 空间复杂度: $O(1)$.
+
+## 扩展
+
+- [查找有序序列中的元素的第一个和最后一个位置](./mod.rs)
+
+## 练习
+
+- [旋转数组的最小数字](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+- [旋转数组的最小数字 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
 
 ## 参考
 
