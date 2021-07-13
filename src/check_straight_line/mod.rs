@@ -46,4 +46,21 @@ fn test_check_straight_line() {
         ]),
         false
     );
+
+    assert_eq!(
+        check_straight_line(vec![
+            vec![1, 1],
+            vec![2, 2],
+            vec![3, 4],
+            vec![4, 5],
+            vec![5, 6],
+            vec![7, 7]
+        ]),
+        false
+    );
+
+    assert_eq!(
+        check_straight_line(vec![vec![0, 1], vec![0, 2], vec![0, 0],]),
+        true
+    );
 }

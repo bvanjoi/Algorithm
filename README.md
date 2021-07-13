@@ -48,6 +48,7 @@
 - [卡特兰数](./src/catalan_number/README.md)
 - [霍纳算法](./src/horner_method/README.md)
 - [欧几里得算法](./src/euclidean_algorithm/README.md)
+- [蔡勒公式](./src/zeller_congruence/README.md)
 
 ## 线性代数
 
@@ -98,6 +99,7 @@
 > 几何，研究形状、大小、图形的相对位置等空间与区关系以及空间形式的度量。
 
 - [可否为三角形](./src/is_triangle/README.md)
+- [可否为正方形](./src/is_square/README.md)
 - [判断二维平面上的点是否在同一条直线上](./src/check_straight_line/README.md)
 
 ## reference

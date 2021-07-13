@@ -37,6 +37,10 @@
 - 运行时间：$O(n)$.
 - 空间：$O(1)$.
 
+## 练习
+
+- [主要元素](https://leetcode-cn.com/problems/find-majority-element-lcci/)
+
 ## 参考
 
 - [Boyer–Moore majority vote algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)

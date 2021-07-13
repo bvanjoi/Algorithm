@@ -16,7 +16,6 @@ pub mod binary_search;
 pub mod linear_search;
 
 // 集合论
-
 pub mod intersection;
 pub mod union;
 
@@ -29,6 +28,7 @@ pub mod combination;
 pub mod euclidean_algorithm;
 pub mod horner_method;
 pub mod inversion;
+pub mod zeller_congruence;
 
 // 线性代数
 pub mod matrix_multiplication;
@@ -54,4 +54,5 @@ pub mod permutation;
 
 // 几何
 pub mod check_straight_line;
+pub mod is_square;
 pub mod is_triangle;
