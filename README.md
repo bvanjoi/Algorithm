@@ -1,9 +1,13 @@
 # Algorithm implemented by Rust
 
-## 字符串与数字
+## 大数
+
+- [n 进制加法](./src/n_add/README.md)
+
+## 字符串
 
 - [是否为数字](./src/is_number/README.md)
-- [n 进制加法](./src/n_add/README.md)
+- [Manacher's Algorithm](./src/manacher/README.md)
 
 ## 数据流
 

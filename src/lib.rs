@@ -1,6 +1,9 @@
-// 字符串与数字
-pub mod is_number;
+// 大数
 pub mod n_add;
+
+// 字符串
+pub mod is_number;
+pub mod manacher;
 
 // 数组
 pub mod majority_vote;
