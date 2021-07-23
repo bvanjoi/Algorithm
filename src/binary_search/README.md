@@ -57,6 +57,7 @@ pub fn binary_search(arr: Vec<i32>, v: i32) -> i32 {
 
 ## 练习
 
+- [搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
 - [旋转数组的最小数字](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
 - [旋转数组的最小数字 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
 

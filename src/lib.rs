@@ -49,6 +49,7 @@ pub mod link_list;
 // 树
 pub mod binary_tree;
 pub mod build_binary_tree_from_pre_and_in;
+pub mod traverse_binary_tree;
 
 // 搜索
 pub mod array_enumeration;

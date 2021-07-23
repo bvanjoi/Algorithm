@@ -11,7 +11,7 @@
 
 ## 数据流
 
-- [多数投票](./src/majority_vote/README.md)
+- [多数投票算法](./src/majority_vote/README.md)
 
 ## 排序
 

@@ -21,24 +21,24 @@ pub fn manacher(s: String) -> String {
             i_mirror = 2 * c - i;
         }
         if r > i {
-					// 防止超出 R
+            // 防止超出 R
             p[i] = usize::min(r - i, p[i_mirror]);
         } else {
-						// i == r 的情况
+            // i == r 的情况
             p[i] = 0;
         }
-				
-				// 中心扩展法
+
+        // 中心扩展法
         while chars[i + 1 + p[i]] == chars[i - 1 - p[i]] {
             p[i] += 1;
         }
-				// 更新 r
+        // 更新 r
         if i + p[i] > r {
             c = i;
             r = i + p[i];
         }
     }
-		// 找到 p 中的最大值
+    // 找到 p 中的最大值
     let mut max_len = 0;
     let mut center_index = 0;
     for i in 1..chars.len() - 1 {
@@ -47,9 +47,9 @@ pub fn manacher(s: String) -> String {
             center_index = i;
         }
     }
-		// 原字符串的下标
+    // 原字符串的下标
     let start = (center_index - max_len) / 2;
-		// 最长回文子串
+    // 最长回文子串
     (s.chars().collect::<Vec<_>>())[start..start + max_len]
         .into_iter()
         .collect()
