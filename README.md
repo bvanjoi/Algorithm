@@ -31,13 +31,13 @@
 - [线性查找](./src/linear_search/README.md)
 - [二分查找](./src/binary_search/README.md)
 
-## 集合论
+## 集合
 
 > 集合论是研究由一堆抽象对象构成的整体的理论，包含集合、元素、关系等。
 
 - [数组的交集](./src/intersection/README.md)
 - [数组的并集](./src/union/README.md)
-- [并查集](./src/)
+- [并查集](./src/union_find/README.md)
 
 ## 位运算
 
@@ -53,6 +53,7 @@
 - [霍纳算法](./src/horner_method/README.md)
 - [欧几里得算法](./src/euclidean_algorithm/README.md)
 - [蔡勒公式](./src/zeller_congruence/README.md)
+- [约瑟夫置换](./src/josephus_permutation/README.md)
 
 ## 线性代数
 

@@ -21,6 +21,7 @@ pub mod linear_search;
 // 集合论
 pub mod intersection;
 pub mod union;
+pub mod union_find;
 
 // 位运算
 pub mod power_of_two;
@@ -31,6 +32,7 @@ pub mod combination;
 pub mod euclidean_algorithm;
 pub mod horner_method;
 pub mod inversion;
+pub mod josephus_permutation;
 pub mod zeller_congruence;
 
 // 线性代数
