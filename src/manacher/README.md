@@ -45,3 +45,7 @@
 
 - 运行时间：O(n);
 - 空间：O(1).
+
+## 参考
+
+- [Longest palindromic substring](https://en.wikipedia.org/wiki/Longest_palindromic_substring)

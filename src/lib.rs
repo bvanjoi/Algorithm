@@ -4,9 +4,12 @@ pub mod n_add;
 // 字符串
 pub mod is_number;
 pub mod manacher;
+pub mod matching;
 
-// 数组
+// 数据流
+pub mod dutch_nation_flag;
 pub mod majority_vote;
+pub mod fisher_yates_shuffle;
 
 // 排序
 pub mod bubble_sort;
@@ -24,11 +27,13 @@ pub mod union;
 pub mod union_find;
 
 // 位运算
+pub mod is_equal;
 pub mod power_of_two;
 
 // 数论
 pub mod catalan_number;
 pub mod combination;
+pub mod eratosthenes_sieve;
 pub mod euclidean_algorithm;
 pub mod horner_method;
 pub mod inversion;

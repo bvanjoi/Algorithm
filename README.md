@@ -6,12 +6,15 @@
 
 ## 字符串
 
+- [字符串匹配](./src/matching/README.md)
 - [是否为数字](./src/is_number/README.md)
-- [Manacher's Algorithm](./src/manacher/README.md)
+- [马拉车算法](./src/manacher/README.md)
 
 ## 数据流
 
+- [荷兰旗排序](./src/dutch_nation_flag/README.md)
 - [多数投票算法](./src/majority_vote/README.md)
+- [洗牌算法](./src/fisher_yates_shuffle/README.md)
 
 ## 排序
 
@@ -41,6 +44,7 @@
 
 ## 位运算
 
+- [判断两数是否相等](./src/is_equal/README.md)
 - [判断整数是否为 2 的幂](./src/power_of_two/README.md)
 
 ## 数论
@@ -54,6 +58,7 @@
 - [欧几里得算法](./src/euclidean_algorithm/README.md)
 - [蔡勒公式](./src/zeller_congruence/README.md)
 - [约瑟夫置换](./src/josephus_permutation/README.md)
+- [埃氏筛法](./src/eratosthenes_sieve/README.md)
 
 ## 线性代数
 
