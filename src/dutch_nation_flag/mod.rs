@@ -2,22 +2,22 @@ pub fn dutch_nation_flag(nums: Vec<i32>) -> Vec<i32> {
     let mut nums = nums;
     let mut left = 0;
     let mut right = nums.len() - 1;
-		let mut i = 0;
-		while i <= right {
-			while i <= right && nums[i] == 2 {
-				nums.swap(i, right);
-				if right == 0 {
-					break;
-				}
-				right -= 1;
-			}
+    let mut i = 0;
+    while i <= right {
+        while i <= right && nums[i] == 2 {
+            nums.swap(i, right);
+            if right == 0 {
+                break;
+            }
+            right -= 1;
+        }
 
-			if nums[i] == 0 {
-				nums.swap(i, left);
-				left += 1;
-			}
-			i += 1;
-		}
+        if nums[i] == 0 {
+            nums.swap(i, left);
+            left += 1;
+        }
+        i += 1;
+    }
     return nums;
 }
 

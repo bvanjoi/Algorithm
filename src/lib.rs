@@ -8,8 +8,8 @@ pub mod matching;
 
 // 数据流
 pub mod dutch_nation_flag;
-pub mod majority_vote;
 pub mod fisher_yates_shuffle;
+pub mod majority_vote;
 
 // 排序
 pub mod bubble_sort;
