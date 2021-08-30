@@ -1,12 +1,10 @@
 # 排序问题 — 选择排序
 
-## 选择排序简介
-
-### 算法
+## 算法
 
 选择排序是一个*迭代*的过程。每次迭代中将未排序数组中的最小值扔到已排序数组中的**最末尾**。
 
-### 示例
+## 示例
 
 初始时：
 
@@ -20,36 +18,22 @@
 6. 已排序的数组为 [1,2,3,4,5], 未排序的部分为 [6], 将未排序部分的 6 扔到已排序的末尾。
 7. 已排序的数组为 [1,2,3,4,5,6], 未排序的部分为 [], 结束。
 
-### 实现
+## 实现
 
-```Rust
-pub fn selection_sort(arr: Vec<i32>) -> Vec<i32> {
-    let mut arr = arr;
-    for i in 0..arr.len() {
-        let mut min_index = i;
-        for j in i + 1..arr.len() {
-            if arr[j] < arr[min_index] {
-               min_index = j;
-            }
-        }
-        arr.swap(i, min_index);
-    }
-    return arr;
-}
-```
+- [选择排序实现](./mod.rs)
 
-### 性能
+## 性能
 
 - 运行时间: $O(n^2)$.
 - 空间复杂度: $O(1)$.
 
-### 特性
+## 特性
 
 选择排序满足:
 
 - 对于**较小**的数组，其表现更加优秀。
 
-### 扩展
+## 扩展
 
 - 按照从大到小的顺序排序：
 
@@ -69,7 +53,7 @@ pub fn selection_sort(arr: Vec<i32>) -> Vec<i32> {
 }
 ```
 
-### 练习
+## 练习
 
 - [排序数组](https://leetcode-cn.com/problems/sort-an-array/)
 

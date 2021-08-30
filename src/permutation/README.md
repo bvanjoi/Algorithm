@@ -23,39 +23,7 @@
 
 ### 实现
 
-```Rust
-/// get the permutation of arr
-///
-/// - arr, origin array.
-/// - visited, visited[i] means weather arr[i] had used.
-/// - r, the record vector.
-/// - index, used for recursion.
-/// - res, store result.
-pub fn permutation<T: Clone>(
-    arr: &Vec<T>,
-    visited: &mut Vec<bool>,
-    r: &mut Vec<T>,
-    index: usize,
-    res: &mut Vec<Vec<T>>,
-) {
-    if r.len() != arr.len() || visited.len() != arr.len() {
-        panic!("the record or flag array had wrong.");
-    }
-    if index == arr.len() {
-        res.push(r.to_vec());
-        return;
-    }
-    for i in 0..arr.len() {
-        if visited[i] {
-            continue;
-        }
-        visited[i] = true;
-        r[index] = arr[i].clone();
-        permutation(arr, visited, r, index + 1, res);
-        visited[i] = false;
-    }
-}
-```
+[全排列](./mod.rs)
 
 ### 性能
 

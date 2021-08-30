@@ -1,7 +1,14 @@
-use algorithm::insertion_sort::insertion_sort_recursive;
-use algorithm::merge_sort::merge_sort;
-use algorithm::selection_sort::selection_sort;
-use algorithm::{bubble_sort::bubble_sort, insertion_sort::insertion_sort};
+pub mod bubble_sort;
+pub mod heap_sort;
+pub mod insertion_sort;
+pub mod merge_sort;
+pub mod selection_sort;
+
+use self::{
+    bubble_sort::bubble_sort, insertion_sort::insertion_sort,
+    insertion_sort::insertion_sort_recursive, merge_sort::merge_sort,
+    selection_sort::selection_sort,
+};
 
 fn test_sorts(arr: Vec<i32>) {
     let mut compare_arr = arr.clone();

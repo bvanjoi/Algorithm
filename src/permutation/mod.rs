@@ -1,10 +1,10 @@
-/// get the permutation of arr
+/// Get the permutation of arr
 ///
-/// - arr, origin array.
-/// - visited, visited[i] means weather arr[i] had used.
-/// - r, the record vector.
-/// - index, used for recursion.
-/// - res, store result.
+/// - `arr`, origin array.
+/// - `visited`, `visited[i]` means weather `arr[i]` had used.
+/// - `r`, the record vector.
+/// - `index`, used for recursion.
+/// - `res`, store result.
 pub fn permutation<T: Clone>(
     arr: &Vec<T>,
     visited: &mut Vec<bool>,
@@ -52,16 +52,6 @@ fn test_permutation1() {
 
 #[test]
 fn test_permutation2() {
-    let arr = vec![1, 2];
-    let mut f = vec![false; arr.len()];
-    let mut r = vec![arr[0]; arr.len()];
-    let mut res = vec![];
-    permutation(&arr, &mut f, &mut r, 0, &mut res);
-    assert_eq!(res, vec![vec![1, 2], vec![2, 1]]);
-}
-
-#[test]
-fn test_permutation3() {
     let s = String::from("abc");
     let arr = s.chars().collect::<Vec<char>>();
     let mut f = vec![false; arr.len()];

@@ -12,11 +12,7 @@ pub mod fisher_yates_shuffle;
 pub mod majority_vote;
 
 // 排序
-pub mod bubble_sort;
-pub mod insertion_sort;
-pub mod merge_sort;
-pub mod selection_sort;
-
+pub mod sorting;
 // 查找
 pub mod binary_search;
 pub mod linear_search;

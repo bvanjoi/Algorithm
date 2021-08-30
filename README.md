@@ -21,10 +21,11 @@
 > - 输入: 一个长度为 $n$ 的序列 $A$, 且 $A = <a_1, a_2, ..., a_n>$
 > - 输出: 序列 $a_1', a_2', ..., a_n'$ 且满足 $a_1' \le a_2' \le ... \le a_n'$.
 
-- [归并排序](./src/merge_sort/README.md)
-- [冒泡排序](./src/bubble_sort/README.md)
-- [插入排序](./src/insertion_sort/README.md)
-- [选择排序](./src/selection_sort/README.md)
+- [归并排序](./src/sorting/merge_sort/README.md)
+- [冒泡排序](./src/sorting/bubble_sort/README.md)
+- [插入排序](./src/sorting/insertion_sort/README.md)
+- [选择排序](./src/sorting/selection_sort/README.md)
+- [堆排序](./src/sorting/heap_sort/README.md)
 
 ## 查找
 
