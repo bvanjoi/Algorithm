@@ -2,11 +2,12 @@ pub mod bubble_sort;
 pub mod heap_sort;
 pub mod insertion_sort;
 pub mod merge_sort;
+pub mod quick_sort;
 pub mod selection_sort;
 
 use self::{
-    bubble_sort::bubble_sort, insertion_sort::insertion_sort,
-    insertion_sort::insertion_sort_recursive, merge_sort::merge_sort,
+    bubble_sort::bubble_sort, heap_sort::heap_sort, insertion_sort::insertion_sort,
+    insertion_sort::insertion_sort_recursive, merge_sort::merge_sort, quick_sort::quick_sort,
     selection_sort::selection_sort,
 };
 
@@ -19,6 +20,8 @@ fn test_sorts(arr: Vec<i32>) {
     let arr_after_insertion_sort_recursive = insertion_sort_recursive(arr.clone());
     let arr_after_selection_sort = selection_sort(arr.clone());
     let arr_after_bubble_sort = bubble_sort(arr.clone());
+    let arr_after_heap_sort = heap_sort(arr.clone());
+    let arr_after_quick_sort = quick_sort(arr.clone());
 
     assert_eq!(
         compare_arr, arr_after_insertion_sort,
@@ -48,6 +51,18 @@ fn test_sorts(arr: Vec<i32>) {
         compare_arr, arr_after_bubble_sort,
         "Failed in bubble_sort by using {:?} and {:?}",
         compare_arr, arr_after_bubble_sort
+    );
+
+    assert_eq!(
+        compare_arr, arr_after_heap_sort,
+        "Failed in heap_sort by using {:?} and {:?}",
+        compare_arr, arr_after_heap_sort
+    );
+
+    assert_eq!(
+        compare_arr, arr_after_quick_sort,
+        "Failed in quick_sort by using {:?} and {:?}",
+        compare_arr, arr_after_quick_sort
     );
 }
 
