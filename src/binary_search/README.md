@@ -2,7 +2,7 @@
 
 ## 二分查找简介
 
-### 算法
+## 算法
 
 二分查找有一个前提条件：输入的序列 $A$ 为有序序列。
 
@@ -12,7 +12,7 @@
 - 若中间元素小于待查找元素，则丢弃序列左侧元素。
 - 若中间元素大于待查找元素，则丢弃序列右侧元素。
 
-### 示例
+## 示例
 
 初始时：
 
@@ -22,28 +22,11 @@
 2. 检查 A[(0 + 3) / 2 = 1], 其值 2, 小于 3, 丢弃左侧元素。
 3. 检查 A[(1 + 3) / 2 = 2], 其值 3, 等于 3, 返回下标 2.
 
-### 实现
+## 实现
 
-```Rust
-pub fn binary_search(arr: Vec<i32>, v: i32) -> i32 {
-  let mut left = 0;
-  let mut right = arr.len();
+[二分法搜索](./mod.rs)
 
-  while left < right {
-      let mid = left + (right - left) / 2;
-      if arr[mid] == v {
-          return mid as i32;
-      } else if arr[mid] > v {
-          right = mid;
-      } else {
-          left = mid + 1;
-      }
-  }
-  return -1;
-}
-```
-
-### 性能
+## 性能
 
 - 运行时间:
   - 平均运行时间: $O(logn)$.

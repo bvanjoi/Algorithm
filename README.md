@@ -27,6 +27,7 @@
 - [选择排序](./src/sorting/selection_sort/README.md)
 - [堆排序](./src/sorting/heap_sort/README.md)
 - [快速排序](./src/sorting/quick_sort/README.md)
+- [计数排序](./src/sorting/counting_sort/README.md)
 
 ## 查找
 

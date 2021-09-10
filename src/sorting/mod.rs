@@ -4,11 +4,13 @@ pub mod insertion_sort;
 pub mod merge_sort;
 pub mod quick_sort;
 pub mod selection_sort;
+pub mod counting_sort;
 
 use self::{
     bubble_sort::bubble_sort, heap_sort::heap_sort, insertion_sort::insertion_sort,
     insertion_sort::insertion_sort_recursive, merge_sort::merge_sort, quick_sort::quick_sort,
     selection_sort::selection_sort,
+    counting_sort::counting_sort
 };
 
 fn test_sorts(arr: Vec<i32>) {
@@ -22,6 +24,13 @@ fn test_sorts(arr: Vec<i32>) {
     let arr_after_bubble_sort = bubble_sort(arr.clone());
     let arr_after_heap_sort = heap_sort(arr.clone());
     let arr_after_quick_sort = quick_sort(arr.clone());
+    let arr_after_counting_sort = counting_sort(arr.clone());
+    
+    assert_eq!(
+        compare_arr, arr_after_counting_sort,
+        "Failed in counting_sort by using {:?} and {:?}",
+        compare_arr, arr_after_counting_sort
+    );
 
     assert_eq!(
         compare_arr, arr_after_insertion_sort,
