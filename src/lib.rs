@@ -1,3 +1,11 @@
+pub mod bit;
+mod insertion_sort;
+pub mod number;
+
+mod test_helper;
+
+pub use insertion_sort::*;
+
 // 大数
 pub mod n_add;
 
@@ -21,20 +29,6 @@ pub mod linear_search;
 pub mod intersection;
 pub mod union;
 pub mod union_find;
-
-// 位运算
-pub mod is_equal;
-pub mod power_of_two;
-
-// 数论
-pub mod catalan_number;
-pub mod combination;
-pub mod eratosthenes_sieve;
-pub mod euclidean_algorithm;
-pub mod horner_method;
-pub mod inversion;
-pub mod josephus_permutation;
-pub mod zeller_congruence;
 
 // 线性代数
 pub mod matrix_multiplication;
