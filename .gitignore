@@ -3,3 +3,4 @@ target/
 Cargo.lock
 .idea/
 *.code-workspace
+.DS_Store

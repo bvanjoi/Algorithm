@@ -1,11 +1,17 @@
 #[cfg(test)]
 mod test_helper;
 
+mod binary_search;
+mod bubble_sort;
 mod insertion_sort;
+mod inversion;
 mod merge_sort;
 mod selection_sort;
 
+pub use binary_search::*;
+pub use bubble_sort::*;
 pub use insertion_sort::*;
+pub use inversion::*;
 pub use merge_sort::*;
 pub use selection_sort::*;
 
@@ -27,7 +33,6 @@ pub use selection_sort::*;
 // // 排序
 // pub mod sorting;
 // // 查找
-// pub mod binary_search;
 // pub mod linear_search;
 
 // // 集合论

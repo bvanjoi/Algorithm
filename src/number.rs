@@ -142,6 +142,7 @@ pub fn josephus_permutation(n: usize, m: usize) -> usize {
 /// assert_eq!(inversion_number_of_array(vec![3, 2, 1]), 3);
 /// assert_eq!(inversion_number_of_array(vec![3, 5, 4, 8, 2, 6, 9]), 6);
 /// assert_eq!(inversion_number_of_array(vec![1, 3, 2, 3, 1]), 4);
+/// assert_eq!(inversion_number_of_array(vec![1, 3, 2, 3, 1]), 4);
 /// ```
 ///
 /// |category| time | space|

@@ -67,7 +67,7 @@ fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
 }
 
 #[test]
-fn insertion_sort_test() {
+fn merge_sort_test() {
     let cases = crate::test_helper::sort::cases();
     for case in cases {
         let input = case.get_input().clone();
