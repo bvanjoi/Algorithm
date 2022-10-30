@@ -37,6 +37,6 @@ fn insertion_sort_test() {
     for case in cases {
         let input = case.get_input().clone();
         let actual = insertion_sort(input);
-        assert_eq!(&actual, case.get_expected());
+        pretty_assertions::assert_eq!(&actual, case.get_expected());
     }
 }

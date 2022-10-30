@@ -2,9 +2,11 @@
 mod test_helper;
 
 mod insertion_sort;
+mod merge_sort;
 mod selection_sort;
 
 pub use insertion_sort::*;
+pub use merge_sort::*;
 pub use selection_sort::*;
 
 // pub mod bit;
