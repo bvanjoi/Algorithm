@@ -29,14 +29,15 @@ pub fn merge_sort<T: Ord + Clone>(arr: Vec<T>) -> Vec<T> {
     arr
 }
 
-fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
+pub(crate) fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) -> usize {
     if left + 1 >= right {
-        return;
+        return 0;
     }
+    let mut count = 0;
     let mid = left + (right - left) / 2;
     if left + 1 < right {
-        merge_sort_inner(arr, left, mid);
-        merge_sort_inner(arr, mid, right);
+        count += merge_sort_inner(arr, left, mid);
+        count += merge_sort_inner(arr, mid, right);
     }
     // merge
     let mut buf = Vec::new();
@@ -47,6 +48,7 @@ fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
         if arr[i] > arr[j] {
             buf.push(arr[j].clone());
             j += 1;
+            count += mid - i;
         } else {
             buf.push(arr[i].clone());
             i += 1;
@@ -64,6 +66,7 @@ fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
     buf.into_iter().enumerate().for_each(|(index, ele)| {
         arr[left + index] = ele;
     });
+    return count;
 }
 
 #[test]

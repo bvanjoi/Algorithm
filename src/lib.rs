@@ -12,7 +12,7 @@ pub use binary_search::*;
 pub use bubble_sort::*;
 pub use insertion_sort::*;
 pub use inversion::*;
-pub use merge_sort::*;
+pub use merge_sort::merge_sort;
 pub use selection_sort::*;
 
 // pub mod bit;
