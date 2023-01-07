@@ -7,6 +7,7 @@ mod insertion_sort;
 mod inversion;
 mod merge_sort;
 mod selection_sort;
+mod trie;
 
 pub use binary_search::*;
 pub use bubble_sort::*;
@@ -14,6 +15,7 @@ pub use insertion_sort::*;
 pub use inversion::*;
 pub use merge_sort::merge_sort;
 pub use selection_sort::*;
+pub use trie::*;
 
 // pub mod bit;
 // pub mod number;

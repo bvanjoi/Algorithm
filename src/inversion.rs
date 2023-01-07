@@ -9,8 +9,8 @@
 ///
 /// assert_eq!(inversion(&vec![2, 3, 8, 6, 1]), 5);
 // ```
-pub fn inversion<T: Ord + Clone>(arr: &Vec<T>) -> usize {
-    let mut cloned = arr.clone();
+pub fn inversion<T: Ord + Clone>(arr: &[T]) -> usize {
+    let mut cloned = arr.to_owned();
     let len = cloned.len();
     super::merge_sort::merge_sort_inner(&mut cloned, 0, len)
 }

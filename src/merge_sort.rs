@@ -19,7 +19,7 @@
 /// - remove `Clone` in trait `T`.
 ///
 pub fn merge_sort<T: Ord + Clone>(arr: Vec<T>) -> Vec<T> {
-    if arr.len() == 0 {
+    if arr.is_empty() {
         return arr;
     }
     let mut arr = arr;
@@ -66,7 +66,7 @@ pub(crate) fn merge_sort_inner<T: Ord + Clone>(arr: &mut [T], left: usize, right
     buf.into_iter().enumerate().for_each(|(index, ele)| {
         arr[left + index] = ele;
     });
-    return count;
+    count
 }
 
 #[test]
