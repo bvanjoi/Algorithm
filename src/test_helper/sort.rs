@@ -9,7 +9,7 @@ fn create_sort_test_case<T: Ord + Clone>(input: Vec<T>) -> TestCase<Input<T>, Ex
     TestCase::new(input, expected)
 }
 
-pub fn cases() -> Vec<TestCase<Vec<i32>, Vec<i32>>> {
+pub fn cases() -> Vec<TestCase<Input<i32>, Expected<i32>>> {
     vec![
         create_sort_test_case(vec![]),
         create_sort_test_case(vec![1]),
@@ -18,10 +18,13 @@ pub fn cases() -> Vec<TestCase<Vec<i32>, Vec<i32>>> {
         create_sort_test_case(vec![
             1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5,
         ]),
+        create_sort_test_case(vec![5, 2, 4, 6, 1, 3]),
+        create_sort_test_case(vec![31, 41, 59, 26, 41, 58]),
         create_sort_test_case(vec![5, 4, 3, 2, 1, 0]),
         create_sort_test_case((0..=1000).rev().collect::<Vec<_>>()),
         create_sort_test_case(vec![2, 4, 5, 7, 1, 2, 3, 6]),
         create_sort_test_case(vec![31, 41, 59, 26, 41, 58]),
+        create_sort_test_case(vec![12, 3, 7, 9, 14, 6, 11, 2]),
         create_sort_test_case(vec![3, 4, 2, 1, 7, 5, 8, 9, 0, 6]),
         create_sort_test_case(vec![3, 41, 52, 26, 38, 57, 9, 49]),
         create_sort_test_case(vec![
